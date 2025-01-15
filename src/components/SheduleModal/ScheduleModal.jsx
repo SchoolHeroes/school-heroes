@@ -23,7 +23,7 @@ export const ScheduleModal = ({ closeModal }) => {
     const isoDate = dateInput.toISOString();
 
     try {
-        await axios.post("/telegram-task", {date: isoDate}); 
+        await axios.post("/api/help/telegram-task", {date: isoDate}); 
       } 
       catch (error) {
         alert(error.message);
