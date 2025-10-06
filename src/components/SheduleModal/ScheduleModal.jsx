@@ -25,7 +25,10 @@ export const ScheduleModal = ({ closeModal }) => {
     console.log('isoDate', isoDate);
 
     try {
-        await axios.post("/api/help/telegram-task", {date: isoDate}); 
+      await axios.post("/api/help/telegram-task", {
+        date: isoDate,
+        zoomLink: 'https://us05web.zoom.us/j/88529686310?pwd=EmAzHZFt8fkcjvKy3oJfhIORKHhBcU.1'
+      }); 
       } 
       catch (error) {
         alert(error.message);
