@@ -18,9 +18,11 @@ export const ScheduleModal = ({ closeModal }) => {
     setDateInput(date);
   };
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
+    e.preventDefault();
     // Конвертуємо дату в ISO-формат для передачі на сервер
     const isoDate = dateInput.toISOString();
+    console.log('isoDate', isoDate);
 
     try {
         await axios.post("/api/help/telegram-task", {date: isoDate}); 
